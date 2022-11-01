@@ -1,4 +1,3 @@
-# Build options
 BACKLIGHT_ENABLE = no
 BOOTMAGIC_ENABLE = yes
 COMBO_ENABLE = yes
@@ -9,3 +8,4 @@ QMK_SETTINGS = no
 RGBLIGHT_ENABLE = yes
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
+#VIAL_INSECURE = yes
