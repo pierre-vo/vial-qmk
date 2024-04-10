@@ -15,9 +15,21 @@ enum layers {
 #define RAISE     MO(_RAISE)
 #define ADJUST    MO(_ADJUST)
 
-// Defines for task manager and such
-#define CALTDEL LCTL(LALT(KC_DEL))
-#define TSKMGR LCTL(LSFT(KC_ESC))
+
+#define HRM_A LGUI_T(KC_A)
+#define HRM_S LALT_T(KC_S)
+#define HRM_D LSFT_T(KC_D)
+#define HRM_F LCTL_T(KC_F)
+#define HRM_J RCTL_T(KC_J)
+#define HRM_K RSFT_T(KC_K)
+#define HRM_L LALT_T(KC_L)
+#define HRM_SCLN RGUI_T(KC_SCLN)
+
+// /* Tap Dance Declarations */
+// enum {
+//   SCL = 0,
+//   QUO,
+// };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -34,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_QWERTY] = LAYOUT(
   KC_GRV,        KC_Q,    KC_W,   KC_E,    KC_R,  KC_T,   KC_Y,   KC_U,  KC_I,    KC_O,    KC_P,    KC_EQL,
-  KC_TAB,        KC_A,    KC_S,   KC_D,    KC_F,  KC_G,   KC_H,   KC_J,  KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+  KC_TAB,        HRM_A,   HRM_S,  HRM_D,   HRM_F, KC_G,   KC_H,   HRM_J, HRM_K,   HRM_L,   HRM_SCLN,KC_QUOT,
   OSM(MOD_LSFT), KC_Z,    KC_X,   KC_C,    KC_V,  KC_B,   KC_N,   KC_M,  KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS,
   KC_LCTL,       KC_LGUI, KC_DEL, KC_LALT, LOWER, KC_SPC, KC_ENT, RAISE, KC_LEFT, KC_DOWN, KC_UP,   KC_MINS
 ),
@@ -87,12 +99,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] = LAYOUT(
-  TSKMGR,  _______, _______, _______, _______, _______, _______, RGB_MOD, RGB_VAI, RGB_SAI, RGB_HUI, CALTDEL,
+  _______, _______, _______, _______, _______, _______, _______, RGB_MOD, RGB_VAI, RGB_SAI, RGB_HUI, _______,
   _______, _______, _______, _______, _______, _______, _______, RGB_RMOD,RGB_VAD, RGB_SAD, RGB_HUD, RGB_TOG,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, BL_STEP,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, QK_BOOT
 )
 };
+
+/* Tap Dance Definitions */
+// tap_dance_action_t tap_dance_actions[] = {
+//   /* Shifting for double quote and semicolon */
+//   [SCL] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, KC_COLN),
+//   [QUO] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_DQUO),
+// };
 
 #ifdef RGBLIGHT_LAYERS
 const rgblight_segment_t PROGMEM my_layerQW_layer[] = RGBLIGHT_LAYER_SEGMENTS(

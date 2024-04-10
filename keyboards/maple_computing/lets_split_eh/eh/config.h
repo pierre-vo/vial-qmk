@@ -18,9 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-/* number of backlight levels */
-#define BACKLIGHT_LEVELS 3
-
 /* Split Defines */
 #define SPLIT_HAND_PIN D3
 

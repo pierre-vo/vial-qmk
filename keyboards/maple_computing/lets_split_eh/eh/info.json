@@ -18,7 +18,10 @@
     },
     "rgblight": {
         "led_count": 12,
+        "split": true,
         "split_count": [6, 6],
+        "brightness_steps": 8,
+        "max_brightness": 150,
         "animations": {
             "breathing": true,
             "rainbow_mood": false,
@@ -30,6 +33,11 @@
             "rgb_test": false,
             "alternating": false,
             "twinkle": false
+        },
+        "sleep": true,
+        "layers": {
+            "enabled": true,
+            "max": 4
         }
     },
     "ws2812": {
